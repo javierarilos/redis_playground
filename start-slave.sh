@@ -17,7 +17,7 @@ then
     rm $CONF_FILE
 fi
 
-echo daemonize yes >> $CONF_FILE
+echo daemonize no >> $CONF_FILE
 echo pidfile $PID_FILE >> $CONF_FILE
 echo port 444$INSTANCE_NUMBER$INSTANCE_NUMBER >> $CONF_FILE
 echo slaveof localhost 33311 >> $CONF_FILE
@@ -31,11 +31,6 @@ cat $CONF_FILE
 echo
 
 redis-server $CONF_FILE &
-
-echo ===
-echo ===
-echo === Showing the info-command that breaks the parse_info:
-echo `redis-cli -p 26379 info |grep master`
 
 echo ===
 echo === the following command forces the master to be the default one

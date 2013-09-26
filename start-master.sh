@@ -17,7 +17,7 @@ then
     rm $CONF_FILE
 fi
 echo port 333$INSTANCE_NUMBER$INSTANCE_NUMBER >> $CONF_FILE
-echo daemonize yes >> $CONF_FILE
+echo daemonize no >> $CONF_FILE
 echo pidfile $PID_FILE >> $CONF_FILE
 echo slave-priority 10 >> $CONF_FILE
 

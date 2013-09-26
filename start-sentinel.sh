@@ -16,7 +16,7 @@ then
     rm $CONF_FILE
 fi
 echo port 555$INSTANCE_NUMBER$INSTANCE_NUMBER >> $CONF_FILE
-echo daemonize yes >> $CONF_FILE
+echo daemonize no >> $CONF_FILE
 echo pidfile $PID_FILE >> $CONF_FILE
 echo sentinel monitor sprayer-master 127.0.0.1 33311 1 >> $CONF_FILE
 echo sentinel down-after-milliseconds sprayer-master 5000 >> $CONF_FILE
